@@ -1,3 +1,5 @@
+package main;
+
 import java.io.*;
 import java.util.*;
 
@@ -48,7 +50,7 @@ public class CommandLineInterpreter {
         }
     }
 
-    private static void cat(String filename) {
+    public static void cat(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -59,14 +61,14 @@ public class CommandLineInterpreter {
         }
     }
 
-    private static void echo(String[] args) {
+    public static void echo(String[] args) {
         for (String arg : args) {
             System.out.print(arg + " ");
         }
         System.out.println();
     }
 
-    private static void wc(String filename) {
+    public static void wc(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             int lines = 0;
             int words = 0;
@@ -84,7 +86,7 @@ public class CommandLineInterpreter {
         }
     }
 
-    private static void pwd() {
+    public static void pwd() {
         System.out.println(System.getProperty("user.dir"));
     }
 
